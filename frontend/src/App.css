@@ -1,0 +1,365 @@
+body {
+  color: black;
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f4f4f5;
+}
+
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: #5b21b6;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.upload-card-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.upload-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 480px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.file-input {
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  border: 1px solid #ccc;
+}
+
+.file-name {
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.analyze-button {
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  color: white;
+  font-weight: 600;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.analyze-button:hover {
+  opacity: 0.9;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b5cf6, #ec4899);
+  width: 0%;
+  transition: width 0.6s ease-in-out;
+}
+
+.error-text {
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.events-card,
+.scenarios-card,
+.recommendation-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.events-card h2 {
+  color: #7c3aed;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.scenarios-card h2 {
+  color: #ec4899;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.recommendation-card h2 {
+  color: #16a34a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.6rem;
+  width: calc(100% - 1rem);
+  margin-left: auto;
+  margin-right: auto;
+  transition: background 0.2s;
+}
+
+.event-content {
+  text-align: left;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.event-timestamp {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.event-type {
+  font-weight: 600;
+  margin-right: 0.3rem;
+}
+
+.event-badge {
+  min-width: 60px;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.severity-low {
+  background-color: #ABF5D1;
+  color: #0a6b51;
+}
+
+.severity-medium {
+  background-color: #FFF0B3;
+  color: #924b1f;
+}
+
+.severity-high {
+  background-color: #FFEBE6;
+  color: #b91c1c;
+}
+
+.severity-unknown {
+  background-color: #DEEBFF;
+  color: #111827;
+}
+
+.severity-low-badge {
+  background-color: #57D9A3;
+  color: #0a6b51;
+}
+
+.severity-medium-badge {
+  background-color: #FFC400;
+  color: #924b1f;
+}
+
+.severity-high-badge {
+  background-color: #FF8F73;
+  color: #b91c1c;
+}
+
+.severity-unknown-badge {
+  background-color: #4C9AFF;
+  color: #111827;
+}
+
+.severity-high:hover {
+  background-color: #FFBDAD;
+}
+
+.severity-medium:hover {
+  background-color: #FFE380;
+}
+
+.severity-low:hover {
+  background-color: #79F2C0;
+}
+
+.severity-unknown:hover {
+  background-color: #B3D4FF;
+}
+
+.recommendation-item {
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 0.6rem;
+  background-color: #f9f9f9;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.recommendation-item:hover {
+  background-color: #e5e5e5;
+}
+
+.scenarios-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.scenarios-table th,
+.scenarios-table td {
+  text-align: center;
+  padding: 0.6rem;
+}
+
+.scenarios-table th {
+  font-weight: 600;
+  color: #ec4899;
+}
+
+.scenarios-table tbody tr {
+  transition: background 0.2s;
+}
+
+.scenarios-table tbody tr:hover {
+  background-color: #f3f3f3;
+}
+
+.scenario-name {
+  font-weight: 600;
+}
+
+.scenario-badge {
+  min-width: 60px;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.help-wrapper {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  display: inline-block;
+}
+
+.help-button {
+  background-color: #8b5cf6;
+  border: none;
+  border-radius: 50%;
+  padding: 0.25rem;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.help-button:hover { background-color: #ec4899; }
+
+.help-tooltip {
+  visibility: hidden;
+  width: max-content;
+  background-color: #111827;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  position: absolute;
+  top: -35px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.help-wrapper:hover .help-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  padding: 2rem 0;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.modal-content ul li{
+  list-style: circle;
+  margin-left: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .results-container {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .events-card,
+  .scenarios-card,
+  .recommendation-card {
+    flex: 1 1 33%;
+  }
+}
