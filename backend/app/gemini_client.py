@@ -59,6 +59,7 @@ You are a product experience analyst AI. Analyze the uploaded video and perform 
 Do not include any text outside the JSON. Only JSON output.
 """
 
+
     response = client.models.generate_content(
         model="gemini-3-flash-preview",
         contents=[prompt, uploaded_file]
@@ -66,6 +67,8 @@ Do not include any text outside the JSON. Only JSON output.
 
     os.remove(file_path)
     client.files.delete(name=uploaded_file.name)
+
+    print(response)
 
     result = response.candidates[0].content.parts[0].text
 
