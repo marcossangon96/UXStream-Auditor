@@ -53,7 +53,7 @@ function App() {
             const formData = new FormData();
             formData.append("file", videoFile);
 
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/analyze`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/analyze`, {
                 method: "POST",
                 body: formData,
             });
