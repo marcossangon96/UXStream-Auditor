@@ -3,7 +3,7 @@ from pathlib import Path
 import time
 import os
 
-client = genai.Client(api_key="AIzaSyCEWXK_l6b3kxF4OLxa10Cy0YTYO1yWDsI")
+client = genai.Client(api_key=os.environ.get("API_KEY"))
 
 UPLOAD_DIR = Path(__file__).parent / "uploads"
 UPLOAD_DIR.mkdir(exist_ok=True)
