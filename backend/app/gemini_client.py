@@ -61,7 +61,7 @@ Do not include any text outside the JSON. Only JSON output.
 
 
     response = client.models.generate_content(
-        model="gemini-3-flash-preview",
+        model="gemini-2.5-flash",
         contents=[prompt, uploaded_file]
     )
 
